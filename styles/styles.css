@@ -1,0 +1,52 @@
+/* slideshow CSS starts */
+
+.tech-slideshow {
+  /* make this half the height of your image: */
+  height: 400px;
+  /* if you want. adjust the width of your slideshow here: */
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+  
+.tech-slideshow > div {
+  /* make this half the height of your image: */
+  height: 400px;
+  /* make this the exact width of your image: */
+  width: 5052px;
+  background: url(../images/collage.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+.tech-slideshow .mover-1,
+.tech-slideshow .mover-2 {
+  /* to slow or speed up, change "20s": */
+  animation: moveSlideshow 20s linear infinite;
+}
+
+.tech-slideshow .mover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  /* make "-400px" half the height of your image: */
+  background-position: 0 -400px;
+  /* to change the speed of the colored images, uncomment the line below: */
+  /* animation: moveSlideshow 24s linear infinite; */
+}
+
+.tech-slideshow:hover .mover-2 {
+  opacity: 1;
+}
+  
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-66.6666%);  
+  }
+}
+
+/* slideshow CSS ends */
